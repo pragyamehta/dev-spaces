@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+  labels:
+    app: gateway
+    azds.io/generated: "true"
+    chart: gateway-0.1.0
+    heritage: Helm
+    release: bikesharingsampleappsampleapp
+  name: gateway-dev-27813b2e
+  namespace: dev
+spec:
+  rules:
+  - host: azureuser1.s.dev.gateway.1d77cd06b2c648259964.westus2.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: gateway
+          servicePort: http
+        path: /

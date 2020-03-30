@@ -7,8 +7,8 @@ apiName: gateway
 fullnameOverride: bikesharingweb
 replicaCount: 1
 image:
-  repository: azdspublic/bikesharing-bikesharingweb
-  tag: build.20200204.5
+  repository: murph15/bikesharingweb #azdspublic/bikesharing-bikesharingweb
+  tag: routing1 #build.20200204.5
   pullPolicy: IfNotPresent
 imagePullSecrets: []
   # Optionally specify an array of imagePullSecrets.
@@ -30,7 +30,7 @@ ingress:
     kubernetes.io/ingress.class: addon-http-application-routing
   path: /
   hosts:
-    - dev.bikesharingweb.<REPLACE_ME_WITH_HOST_SUFFIX>
+    - azureuser1.s.new-dev.bikesharingweb.1d77cd06b2c648259964.westus2.aksapp.io
   tls: []
     # - secretName: chart-example-tls
     #   hosts:

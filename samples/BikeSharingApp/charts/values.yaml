@@ -4,13 +4,13 @@
 bikesharingweb:
   ingress:
     annotations:
-      kubernetes.io/ingress.class: traefik-azds  # Dev Spaces-specific
+      kubernetes.io/ingress.class: addon-http-application-routing
     hosts:
-      - dev.bikesharingweb.<REPLACE_ME_WITH_HOST_SUFFIX>  # Assumes deployment to the 'dev' space
+      - dev.bikesharingweb.1d77cd06b2c648259964.westus2.aksapp.io  # Assumes deployment to the 'dev' space
 
 gateway:
   ingress:
     annotations:
-      kubernetes.io/ingress.class: traefik-azds  # Dev Spaces-specific
+      kubernetes.io/ingress.class: addon-http-application-routing
     hosts:
-      - dev.gateway.<REPLACE_ME_WITH_HOST_SUFFIX>  # Assumes deployment to the 'dev' space
+      - dev.gateway.1d77cd06b2c648259964.westus2.aksapp.io  # Assumes deployment to the 'dev' space
