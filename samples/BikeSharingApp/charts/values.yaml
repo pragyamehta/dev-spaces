@@ -6,11 +6,11 @@ bikesharingweb:
     annotations:
       kubernetes.io/ingress.class: addon-http-application-routing
     hosts:
-      - dev.bikesharingweb.1d77cd06b2c648259964.westus2.aksapp.io  # Assumes deployment to the 'dev' space
+      - dev.bikesharingweb.6c1afd732423493cb507.eastus2.aksapp.io  # Assumes deployment to the 'dev' space
 
 gateway:
   ingress:
     annotations:
       kubernetes.io/ingress.class: addon-http-application-routing
     hosts:
-      - dev.gateway.1d77cd06b2c648259964.westus2.aksapp.io  # Assumes deployment to the 'dev' space
+      - dev.gateway.6c1afd732423493cb507.eastus2.aksapp.io  # Assumes deployment to the 'dev' space

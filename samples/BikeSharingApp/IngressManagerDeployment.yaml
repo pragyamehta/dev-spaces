@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
@@ -31,7 +31,7 @@ spec:
               fieldPath: spec.nodeName
         - name: HEALTH_CHECK_TIMEOUT_SECONDS
           value: "3"
-        image: murph15/ingressmgr:routing2
+        image: murph15/ingressmgr:routing3
         imagePullPolicy: IfNotPresent
         name: ingressmgr
         resources:

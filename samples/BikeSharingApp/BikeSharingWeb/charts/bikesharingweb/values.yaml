@@ -30,7 +30,7 @@ ingress:
     kubernetes.io/ingress.class: addon-http-application-routing
   path: /
   hosts:
-    - azureuser1.s.new-dev.bikesharingweb.1d77cd06b2c648259964.westus2.aksapp.io
+    - azureuser1.s.new-dev.bikesharingweb.6c1afd732423493cb507.eastus2.aksapp.io
   tls: []
     # - secretName: chart-example-tls
     #   hosts:

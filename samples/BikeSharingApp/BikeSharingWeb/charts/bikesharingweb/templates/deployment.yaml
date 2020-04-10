@@ -23,57 +23,57 @@ spec:
       annotations:
         buildID: {{ .Values.buildID | default "" | quote }}
     spec:
-      initContainers:
-        - env:
-          - name: BASE_NAMESPACES
-            value: dev
-          image: azdsdev/azds-proxy-init:20200325.3
-          imagePullPolicy: IfNotPresent
-          name: devspaces-proxy-init
-          resources: {}
-          securityContext:
-            capabilities:
-              add:
-              - NET_ADMIN
-            runAsUser: 0
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          volumeMounts:
-          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-            name: default-token-p5rmk
-            readOnly: true
+#      initContainers:
+#        - env:
+#          - name: BASE_NAMESPACES
+#            value: dev
+#          image: azdsdev/azds-proxy-init:20200325.3
+#          imagePullPolicy: IfNotPresent
+#          name: devspaces-proxy-init
+#          resources: {}
+#          securityContext:
+#            capabilities:
+#              add:
+#              - NET_ADMIN
+#            runAsUser: 0
+#          terminationMessagePath: /dev/termination-log
+#          terminationMessagePolicy: File
+#          volumeMounts:
+#          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+#            name: default-token-p5rmk
+#            readOnly: true
       containers:
-        - env:
-          - name: NAMESPACE
-            value: azureuser1
-          - name: TRACE_ENDPOINT
-            value: https://azds-59774bcf-bc90-4d76-a0c7-977903b36cee-traces.eus.azdsdev.io/api/v3.2/traces
-          - name: TRACE_VERSION_KEY_HEADER
-            value: x-azds-version-key
-          - name: TRACE_VERSION_KEY
-            value: "0.1"
-          - name: LOG_LEVEL
-            value: "0"
-          - name: AZDS_ENVIRONMENT
-            value: Development
-          image: azdsdev/azds-proxy:20200325.3
-          imagePullPolicy: IfNotPresent
-          name: devspaces-proxy
-          resources: {}
-          securityContext:
-            capabilities:
-              add:
-              - NET_ADMIN
-            runAsUser: 0
-          terminationMessagePath: /dev/termination-log
-          terminationMessagePolicy: File
-          volumeMounts:
-          - mountPath: /etc/kubernetes
-            name: aks-sp
-            readOnly: true
-          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-            name: default-token-p5rmk
-            readOnly: true
+#        - env:
+#          - name: NAMESPACE
+#            value: azureuser1
+#          - name: TRACE_ENDPOINT
+#            value: https://azds-59774bcf-bc90-4d76-a0c7-977903b36cee-traces.eus.azdsdev.io/api/v3.2/traces
+#          - name: TRACE_VERSION_KEY_HEADER
+#            value: x-azds-version-key
+#          - name: TRACE_VERSION_KEY
+#            value: "0.1"
+#          - name: LOG_LEVEL
+#            value: "0"
+#          - name: AZDS_ENVIRONMENT
+#            value: Development
+#          image: azdsdev/azds-proxy:20200325.3
+#          imagePullPolicy: IfNotPresent
+#          name: devspaces-proxy
+#          resources: {}
+#          securityContext:
+#            capabilities:
+#              add:
+#              - NET_ADMIN
+#            runAsUser: 0
+#          terminationMessagePath: /dev/termination-log
+#          terminationMessagePolicy: File
+#          volumeMounts:
+#          - mountPath: /etc/kubernetes
+#            name: aks-sp
+#            readOnly: true
+#          - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+#            name: default-token-p5rmk
+#            readOnly: true
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -122,12 +122,12 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
-      volumes:
-      - name: default-token-p5rmk
-        secret:
-          defaultMode: 420
-          secretName: default-token-p5rmk
-      - hostPath:
-          path: /etc/kubernetes
-          type: ""
-        name: aks-sp
+#      volumes:
+#      - name: default-token-p5rmk
+#        secret:
+#          defaultMode: 420
+#          secretName: default-token-p5rmk
+#      - hostPath:
+#          path: /etc/kubernetes
+#          type: ""
+#        name: aks-sp
