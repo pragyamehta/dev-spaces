@@ -47,24 +47,26 @@ app.prepare()
     });
 
 function getApiUrl(host) {
-    // break up hostname parts into array
-    var hostArr = host.split(".");
+    // // break up hostname parts into array
+    // var hostArr = host.split(".");
 
-    // find prefix
-    var prefix = "";
-    if (hostArr.indexOf("s") >= 0) {
-        prefix = hostArr[0] + ".s."
-    }
+    // // find prefix
+    // var prefix = "";
+    // if (hostArr.indexOf("s") >= 0) {
+    //     prefix = hostArr[0] + ".s."
+    // }
 
-    // find base hostname
-    var root = 0;
-    var start = 2;
-    if (prefix !== "" && prefix !== null) {
-        root += 2;
-        start += 2;
-    }
-    var baseHost = hostArr.slice(start, hostArr.length).join('.');
+    // // find base hostname
+    // var root = 0;
+    // var start = 2;
+    // if (prefix !== "" && prefix !== null) {
+    //     root += 2;
+    //     start += 2;
+    // }
+    // var baseHost = hostArr.slice(start, hostArr.length).join('.');
 
-    // return full URL of API service (spacePrefix + rootSpace + apiName + host)
-    return prefix + hostArr[root] + "." + process.env.API_NAME + "." + baseHost;
+    // // return full URL of API service (spacePrefix + rootSpace + apiName + host)
+    // return prefix + hostArr[root] + "." + process.env.API_NAME + "." + baseHost;
+
+    return host + "/gateway";
 }

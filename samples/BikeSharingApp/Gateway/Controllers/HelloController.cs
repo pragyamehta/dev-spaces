@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace app.Controllers
 {
-    [Route("hello")]
+    [Route("gateway/hello")]
     public class HelloController : Controller
     {
         // GET: api/hello

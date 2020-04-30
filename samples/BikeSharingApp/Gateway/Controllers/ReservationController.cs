@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 
 namespace app.Controllers
 {
-    [Route("api/reservation")]
+    [Route("gateway/api/reservation")]
     public class ReservationController : Controller
     {
         private CustomConfiguration _customConfiguration { get; set; }

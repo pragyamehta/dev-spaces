@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 
 namespace app.Controllers
 {
-    [Route("api/user")]
+    [Route("gateway/api/user")]
     public class UserController : Controller
     {
         private string _usersService { get; set; }

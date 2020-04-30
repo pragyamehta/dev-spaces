@@ -17,7 +17,7 @@ imagePullSecrets: []
 
 env:
   - name: gateway_dnsname
-    value: gateway
+    value: gateway/gateway
   - name: bikes_dnsname
     value: bikes
   - name: users_dnsname

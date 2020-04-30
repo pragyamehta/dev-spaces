@@ -14,7 +14,7 @@ using Newtonsoft.Json;
 
 namespace app.Controllers
 {
-    [Route("api/billing")]
+    [Route("gateway/api/billing")]
     public class BillingController : Controller
     {
         private string _billingsService { get; set; }

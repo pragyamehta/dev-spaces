@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 
 namespace app.Controllers
 {
-    [Route("api/bike")]
+    [Route("gateway/api/bike")]
     public class BikeController : Controller
     {
         private string _bikesService { get; set; }
